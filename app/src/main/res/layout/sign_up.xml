@@ -5,12 +5,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/image">
+    android:background="@drawable/image"
+    tools:context=".Register">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sign Up"
+        android:text="@string/sign_up"
         android:gravity="center"
         android:textColor="@color/white"
         android:textSize="60sp"
@@ -23,7 +24,8 @@
         android:orientation="vertical"
         android:padding="30dp"
         android:paddingTop="70dp"
-        android:paddingEnd="10dp">
+        android:paddingEnd="10dp"
+        tools:ignore="RtlSymmetry">
 
         <EditText
             android:id="@+id/sign_up_name"
@@ -31,10 +33,11 @@
             android:layout_height="60dp"
             android:layout_marginTop="50dp"
             android:background="@drawable/lavender_border"
-            android:drawableLeft="@drawable/baseline_accessibility_24"
+            android:drawableStart="@drawable/baseline_accessibility_24"
             android:drawablePadding="8dp"
-            android:hint="Name"
-            android:padding="8dp" />
+            android:hint="@string/name"
+            android:padding="8dp"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/sign_up_email"
@@ -42,10 +45,12 @@
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/lavender_border"
-            android:drawableLeft="@drawable/baseline_email_24"
+            android:drawableStart="@drawable/baseline_email_24"
             android:drawablePadding="8dp"
-            android:hint="Email"
-            android:padding="8dp" />
+            android:hint="@string/register_email"
+            android:padding="8dp"
+            android:autofillHints=""
+             />
 
         <EditText
             android:id="@+id/sign_up_password"
@@ -53,11 +58,12 @@
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/lavender_border"
-            android:drawableLeft="@drawable/baseline_lock_24"
+            android:drawableStart="@drawable/baseline_lock_24"
             android:drawablePadding="8dp"
-            android:hint="Password"
+            android:hint="@string/register_password"
             android:inputType="textPassword"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:autofillHints="" />
 
         <EditText
             android:id="@+id/confirm_password"
@@ -65,20 +71,27 @@
             android:layout_height="60dp"
             android:layout_marginTop="20dp"
             android:background="@drawable/lavender_border"
-            android:drawableLeft="@drawable/baseline_lock_24"
+            android:drawableStart="@drawable/baseline_lock_24"
             android:drawablePadding="8dp"
-            android:hint="Confirm Password"
+            android:hint="@string/confirm_password"
             android:inputType="textPassword"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:autofillHints="" />
 
         <Button
             android:id="@+id/Sign_up_button"
             android:layout_width="350dp"
             android:layout_height="70dp"
             android:layout_marginTop="30dp"
-            android:text="Sign Up"
+            android:text="@string/sign_up_button"
             android:textSize="18sp"
             app:cornerRadius="30dp" />
+
+        <ProgressBar
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:id="@+id/progressBar"/>
 
         <TextView
             android:id="@+id/loginRedirectText"
@@ -87,7 +100,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="14dp"
             android:padding="8dp"
-            android:text="are you registered? login"
+            android:text="@string/are_you_registered_login"
             android:textColor="@color/white"
             android:textSize="18sp" />
 
