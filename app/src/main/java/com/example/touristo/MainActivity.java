@@ -28,21 +28,21 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.mainactivity);
         log_out_button = findViewById(R.id.log_out_button);
         text_view = findViewById(R.id.text_view);
-//        mAuth = FirebaseAuth.getInstance();
-//        user = mAuth.getCurrentUser();
-//        if(user == null){
-//            Intent intent = new Intent(getApplicationContext() , Login.class);
-//            startActivity(intent);
-//            finish();
-//        }
-//        else{
-//            text_view.setText(user.getEmail());
-//        }
+        mAuth = FirebaseAuth.getInstance();
+        user = mAuth.getCurrentUser();
+        if(user == null){
+            Intent intent = new Intent(getApplicationContext() , Login.class);
+            startActivity(intent);
+            finish();
+        }
+        else{
+            text_view.setText(user.getEmail());
+        }
 
         log_out_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//              FirebaseAuth.getInstance().signOut();
+             FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(getApplicationContext() , Login.class);
                 startActivity(intent);
                 finish();
