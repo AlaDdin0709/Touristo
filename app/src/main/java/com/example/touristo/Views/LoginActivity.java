@@ -1,7 +1,6 @@
 
 package com.example.touristo.Views;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,12 +14,7 @@ import android.widget.Toast;
 
 import com.example.touristo.Controlers.Auth.Login;
 import com.example.touristo.Controlers.Auth.Register;
-import com.example.touristo.MainActivity;
 import com.example.touristo.R;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
@@ -36,7 +30,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = loginController.getCurrentUser();
         if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext() , MainActivity.class);
+            Intent intent = new Intent(getApplicationContext() , MainActivityAladdin.class);
             startActivity(intent);
             finish();
         }

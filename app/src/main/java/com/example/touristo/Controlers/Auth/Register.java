@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -13,7 +14,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.touristo.MainActivity;
+import com.example.touristo.Views.MainActivityAladdin;
 import com.example.touristo.R;
 import com.example.touristo.Views.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -21,6 +22,8 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+
+import java.util.Objects;
 
 public class Register extends AppCompatActivity {
     EditText sign_up_email , sign_up_name;
@@ -37,7 +40,7 @@ public class Register extends AppCompatActivity {
         // Check if user is signed in (non-null) and update UI accordingly.
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext() , MainActivity.class);
+            Intent intent = new Intent(getApplicationContext() , MainActivityAladdin.class);
             startActivity(intent);
             finish();
         }
@@ -55,6 +58,7 @@ public class Register extends AppCompatActivity {
         sign_up_name  = findViewById(R.id.sign_up_name);
         mAuth = FirebaseAuth.getInstance();
         progressBar = findViewById(R.id.progressBar);
+
 
         loginRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -104,6 +108,22 @@ public class Register extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(Register.this, "Account created.",
                                             Toast.LENGTH_SHORT).show();
+                                    FirebaseUser user = mAuth.getCurrentUser();
+                                    if (user != null) {
+                                        Log.i("Ala","here 0");
+                                        user.sendEmailVerification()
+                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                    @Override
+                                                    public void onComplete(@NonNull Task<Void> task) {
+                                                        Log.i("Ala","here 1");
+
+                                                        task.isSuccessful();
+
+                                                        Log.i("Ala","here 2");
+
+                                                    }
+                                                });
+                                    }
                                     Intent intent = new Intent( getApplicationContext(), LoginActivity.class );
                                     startActivity(intent);
                                     finish();
@@ -114,6 +134,8 @@ public class Register extends AppCompatActivity {
                                 }
                             }
                         });
+
+
 
 
             }

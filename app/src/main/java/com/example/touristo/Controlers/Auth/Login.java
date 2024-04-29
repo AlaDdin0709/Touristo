@@ -7,7 +7,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
-import com.example.touristo.MainActivity;
+import com.example.touristo.Views.MainActivityAladdin;
 import com.example.touristo.Views.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -36,7 +36,7 @@ public class Login {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressBar.setVisibility(View.GONE);
                         if (task.isSuccessful()) {
-                            Intent intent = new Intent( loginActivity.getApplicationContext(), MainActivity.class );
+                            Intent intent = new Intent( loginActivity.getApplicationContext(), MainActivityAladdin.class );
                             loginActivity.startActivity(intent);
                             loginActivity.finish();
                         } else {
