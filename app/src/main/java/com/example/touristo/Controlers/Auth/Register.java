@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import com.example.touristo.MainActivity;
 import com.example.touristo.R;
+import com.example.touristo.Views.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -58,7 +59,7 @@ public class Register extends AppCompatActivity {
         loginRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent( getApplicationContext(), Login.class );
+                Intent intent = new Intent( getApplicationContext(), LoginActivity.class );
                 startActivity(intent);
                 finish();
             }
@@ -103,7 +104,7 @@ public class Register extends AppCompatActivity {
                                 if (task.isSuccessful()) {
                                     Toast.makeText(Register.this, "Account created.",
                                             Toast.LENGTH_SHORT).show();
-                                    Intent intent = new Intent( getApplicationContext(), Login.class );
+                                    Intent intent = new Intent( getApplicationContext(), LoginActivity.class );
                                     startActivity(intent);
                                     finish();
                                 } else {
