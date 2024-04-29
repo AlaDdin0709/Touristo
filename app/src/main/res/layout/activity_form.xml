@@ -5,23 +5,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/i3">
+    android:background="@drawable/background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="80dp"
-            android:background="#CCB4655E"
+            android:background="#6B2196F3"
             android:orientation="vertical">
 
             <TextView
                 android:id="@+id/question1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:baselineAligned="false"
                 android:text="Préférez-vous le soleil et les plages, ou les paysages montagneux ? "
                 android:textSize="25sp"
                 android:textStyle="bold" />
@@ -60,7 +62,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:background="#CCB4655E"
+            android:background="#6B2196F3"
             android:orientation="vertical">
 
             <TextView
@@ -105,7 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:background="#CCB4655E"
+            android:background="#6B2196F3"
             android:orientation="vertical">
 
             <TextView
@@ -150,7 +152,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:background="#CCB4655E"
+            android:background="#6B2196F3"
             android:orientation="vertical">
 
             <TextView
