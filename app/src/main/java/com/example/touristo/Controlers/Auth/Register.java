@@ -17,6 +17,7 @@ import android.widget.Toast;
 import com.example.touristo.Views.MainActivityAladdin;
 import com.example.touristo.R;
 import com.example.touristo.Views.LoginActivity;
+import com.example.touristo.Views.RegisterActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -26,120 +27,53 @@ import com.google.firebase.auth.FirebaseUser;
 import java.util.Objects;
 
 public class Register extends AppCompatActivity {
-    EditText sign_up_email , sign_up_name;
-    EditText sign_up_password , confirm_password;
-    Button sign_up_button;
-    TextView loginRedirectText;
+
     FirebaseAuth mAuth;
-    ProgressBar progressBar;
+    RegisterActivity registerActivity;
 
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null){
-            Intent intent = new Intent(getApplicationContext() , MainActivityAladdin.class);
-            startActivity(intent);
-            finish();
-        }
+    public Register(RegisterActivity registerActivity){
+        mAuth = FirebaseAuth.getInstance();
+        this.registerActivity = registerActivity;
+    }
+    public FirebaseUser getCurrentUser(){
+        return mAuth.getCurrentUser();
     }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.sign_up);
-        sign_up_email = findViewById(R.id.sign_up_email);
-        sign_up_password = findViewById(R.id.sign_up_password);
-        sign_up_button = findViewById(R.id.Sign_up_button);
-        loginRedirectText = findViewById(R.id.loginRedirectText);
-        confirm_password = findViewById(R.id.confirm_password);
-        sign_up_name  = findViewById(R.id.sign_up_name);
-        mAuth = FirebaseAuth.getInstance();
-        progressBar = findViewById(R.id.progressBar);
+    public void createUser(String email, String password, ProgressBar progressBar){
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        progressBar.setVisibility(View.GONE);
+                        if (task.isSuccessful()) {
 
-
-        loginRedirectText.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent( getApplicationContext(), LoginActivity.class );
-                startActivity(intent);
-                finish();
-            }
-        });
-
-        sign_up_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                progressBar.setVisibility(View.VISIBLE);
-                String email , password , confirm , name;
-                email = sign_up_email.getText().toString();
-                password = sign_up_password.getText().toString();
-                confirm = confirm_password.getText().toString();
-                name = sign_up_name.getText().toString();
-
-                if (TextUtils.isEmpty(name))
-                {
-                    Toast.makeText(Register.this, "Enter a name!!!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(email))
-                {
-                    Toast.makeText(Register.this, "Enter an email!!!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(password))
-                {
-                    Toast.makeText(Register.this, "Enter a password!!!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (TextUtils.isEmpty(confirm))
-                {
-                    Toast.makeText(Register.this, "Fill the confirmation area!!!", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                mAuth.createUserWithEmailAndPassword(email, password)
-                        .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                progressBar.setVisibility(View.GONE);
-                                if (task.isSuccessful()) {
-                                    Toast.makeText(Register.this, "Account created.",
-                                            Toast.LENGTH_SHORT).show();
-                                    FirebaseUser user = mAuth.getCurrentUser();
-                                    if (user != null) {
-                                        Log.i("Ala","here 0");
-                                        user.sendEmailVerification()
-                                                .addOnCompleteListener(new OnCompleteListener<Void>() {
-                                                    @Override
-                                                    public void onComplete(@NonNull Task<Void> task) {
-                                                        Log.i("Ala","here 1");
-
-                                                        task.isSuccessful();
-
-                                                        Log.i("Ala","here 2");
-
-                                                    }
-                                                });
-                                    }
-                                    Intent intent = new Intent( getApplicationContext(), LoginActivity.class );
-                                    startActivity(intent);
-                                    finish();
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Toast.makeText(Register.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                }
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            if (user != null) {
+                                Log.i("Ala","here 0");
+                                user.sendEmailVerification()
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                task.isSuccessful();
+                                            }
+                                        });
                             }
-                        });
+                            if (getCurrentUser().isEmailVerified()) {
+                                Intent intent = new Intent(registerActivity.getApplicationContext(), LoginActivity.class);
+                                registerActivity.startActivity(intent);
+                                registerActivity.finish();
+                            }
+                            else{
+                                Toast.makeText(registerActivity , "Verify you email then Login",Toast.LENGTH_SHORT).show();
+                            }
+                        } else {
+                            // If sign in fails, display a message to the user.
+                            Toast.makeText(registerActivity , "Authentification failed or you didn't verify you email!!",
+                                    Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
 
-
-
-
-            }
-        });
     }
 
 }

@@ -36,9 +36,12 @@ public class Login {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         progressBar.setVisibility(View.GONE);
                         if (task.isSuccessful()) {
-                            Intent intent = new Intent( loginActivity.getApplicationContext(), MainActivityAladdin.class );
-                            loginActivity.startActivity(intent);
-                            loginActivity.finish();
+                            if (getCurrentUser().isEmailVerified())
+                            {
+                                Intent intent = new Intent( loginActivity.getApplicationContext(), MainActivityAladdin.class );
+                                loginActivity.startActivity(intent);
+                                loginActivity.finish();
+                            }
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(loginActivity, "Authentication failed.",

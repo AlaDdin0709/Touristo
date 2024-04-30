@@ -11,7 +11,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.example.touristo.Controlers.Auth.Login;
 import com.example.touristo.Controlers.Auth.Register;
 import com.example.touristo.R;
@@ -19,17 +18,18 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     EditText login_email;
-    Login loginController;
     EditText login_password;
     Button login_button;
     TextView signupRedirectText;
     ProgressBar progressBar;
 
+    Login loginController = new Login(this);
+
     @Override
     public void onStart() {
         super.onStart();
         FirebaseUser currentUser = loginController.getCurrentUser();
-        if(currentUser != null){
+        if(currentUser != null && currentUser.isEmailVerified() ){
             Intent intent = new Intent(getApplicationContext() , MainActivityAladdin.class);
             startActivity(intent);
             finish();
@@ -47,13 +47,13 @@ public class LoginActivity extends AppCompatActivity {
         signupRedirectText = findViewById(R.id.signupRedirectText);
         progressBar = findViewById(R.id.progressBar);
 
-        loginController = new Login(this);
+
 
         //moving from login activity to the signup activity
         signupRedirectText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, Register.class );
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class );
                 startActivity(intent);
                 finish();
             }
