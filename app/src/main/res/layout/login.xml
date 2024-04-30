@@ -6,26 +6,37 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/image"
-    tools:context=".Controlers.Auth.Login">
+    tools:context=".Controlers.Auth.Login"
+    >
+
+    <ImageView
+        android:layout_width="124dp"
+        android:layout_height="137dp"
+        android:layout_gravity="center"
+        android:paddingTop="40dp"
+        android:src="@drawable/logo"
+        />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/welcome"
-        android:gravity="center"
-        android:textColor="@color/white"
-        android:textSize="60sp"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"  />
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:text="@string/welcome"
+        android:textColor="@color/white"
+        android:textSize="60sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="518dp"
+        android:layout_height="482dp"
+        android:layout_gravity="center"
         android:orientation="vertical"
         android:padding="20dp"
-        android:paddingTop="90dp"
+        android:paddingTop="70dp"
         android:paddingEnd="10dp"
-        tools:ignore="RtlSymmetry">
+        tools:ignore="RtlSymmetry"
+        >
 
         <EditText
             android:id="@+id/login_email"
@@ -38,7 +49,9 @@
             android:drawablePadding="8dp"
             android:hint="@string/email"
             android:padding="8dp"
-            tools:ignore="TextFields" />
+            tools:ignore="TextFields"
+            android:layout_gravity="center"
+            />
 
         <EditText
             android:id="@+id/login_password"
@@ -50,7 +63,8 @@
             android:drawablePadding="8dp"
             android:hint="@string/password"
             android:inputType="textPassword"
-            android:padding="8dp" />
+            android:padding="8dp"
+            android:layout_gravity="center"/>
 
         <Button
             android:id="@+id/login_button"
@@ -59,14 +73,9 @@
             android:layout_marginTop="30dp"
             android:text="@string/login"
             android:textSize="18sp"
-            app:cornerRadius="30dp" />
+            app:cornerRadius="30dp"
+            android:layout_gravity="center"/>
 
-        <ProgressBar
-            android:id="@+id/progressBar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:visibility="gone" />
 
         <TextView
             android:id="@+id/signupRedirectText"
@@ -77,7 +86,17 @@
             android:padding="8dp"
             android:text="@string/not_yet_registered_signup"
             android:textColor="@color/white"
-            android:textSize="18sp" />
+            android:textSize="18sp"
+            />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"
+            />
+
 
     </LinearLayout>
 
