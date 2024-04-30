@@ -189,7 +189,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="La faune et la flore" />
+                        android:text="La faune    et la flore" />
                 </LinearLayout>
             </RadioGroup>
         </LinearLayout>
