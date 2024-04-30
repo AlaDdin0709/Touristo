@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/map0"
     android:visibility="visible"
-    tools:context=".MainActivity">
+    tools:context=".MainActivityHamza">
 
     <Button
         android:id="@+id/gabes"

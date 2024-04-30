@@ -19,7 +19,7 @@
             android:name=".Map"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".MainActivityHamza"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
