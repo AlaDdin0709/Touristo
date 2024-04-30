@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/image"
-    tools:context=".Login">
+    tools:context=".Controlers.Auth.Login">
 
     <TextView
         android:layout_width="wrap_content"
@@ -20,7 +20,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="437dp"
+        android:layout_height="518dp"
         android:orientation="vertical"
         android:padding="20dp"
         android:paddingTop="90dp"
@@ -32,12 +32,12 @@
             android:layout_width="350dp"
             android:layout_height="60dp"
             android:layout_marginTop="80dp"
+            android:autofillHints=""
             android:background="@drawable/lavender_border"
             android:drawableStart="@drawable/baseline_email_24"
             android:drawablePadding="8dp"
             android:hint="@string/email"
             android:padding="8dp"
-            android:autofillHints=""
             tools:ignore="TextFields" />
 
         <EditText
@@ -62,10 +62,11 @@
             app:cornerRadius="30dp" />
 
         <ProgressBar
+            android:id="@+id/progressBar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:visibility="gone"
-            android:id="@+id/progressBar"/>
+            android:layout_gravity="center"
+            android:visibility="gone" />
 
         <TextView
             android:id="@+id/signupRedirectText"
