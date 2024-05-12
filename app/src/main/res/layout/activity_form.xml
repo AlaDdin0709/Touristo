@@ -24,7 +24,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:baselineAligned="false"
-                android:text="Préférez-vous le soleil et les plages, ou les paysages montagneux ? "
+                android:text="Do you prefer sun and beaches, or mountainous landscapes ? "
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -43,18 +43,18 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/plage"
+                        android:id="@+id/beaches"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="Plages" />
+                        android:text="Sun and beaches" />
 
                     <RadioButton
-                        android:id="@+id/montagnes"
+                        android:id="@+id/mounts"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="80dp"
-                        android:text="Montagnes" />
+                        android:text="Mountainous landscapes" />
                 </LinearLayout>
             </RadioGroup>
         </LinearLayout>
@@ -69,7 +69,7 @@
                 android:id="@+id/question2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Préférez-vous les activités relaxantes ou les aventures excitantes ? "
+                android:text="Do you prefer relaxing activities or exciting adventures ? "
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -88,18 +88,18 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/aventure"
+                        android:id="@+id/activities"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="Aventures" />
+                        android:text="Relaxing activities" />
 
                     <RadioButton
-                        android:id="@+id/act"
+                        android:id="@+id/adventures"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="80dp"
-                        android:text="Activités relaxantes" />
+                        android:text="Exciting adventures" />
                 </LinearLayout>
             </RadioGroup>
         </LinearLayout>
@@ -114,7 +114,7 @@
                 android:id="@+id/question3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Préférez-vous les événements culturels et les festivals ou les lieux de shopping et de divertissement ? "
+                android:text="Do you prefer cultural events and festivals or places for shopping and entertainment ? "
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -133,18 +133,18 @@
                     android:orientation="horizontal">
 
                     <RadioButton
-                        android:id="@+id/evenements"
+                        android:id="@+id/events"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="Evénements culturels" />
+                        android:text="Cultural events and festivals" />
 
                     <RadioButton
                         android:id="@+id/shopping"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="Lieux de shopping et de divertissement" />
+                        android:text="Shopping and entertainment" />
                 </LinearLayout>
             </RadioGroup>
         </LinearLayout>
@@ -159,7 +159,7 @@
                 android:id="@+id/question4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Êtes-vous intéressé par la faune et la flore locales ou par les sites archéologiques ? "
+                android:text="Are you interested in local flora and fauna or archaeological sites ? "
                 android:textSize="25sp"
                 android:textStyle="bold" />
 
@@ -182,16 +182,38 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:checked="true"
-                        android:text="Les sites archéologiques" />
+                        android:text="Archaeological sites" />
 
                     <RadioButton
                         android:id="@+id/ff"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                        android:text="La faune    et la flore" />
+                        android:text="Local flora and fauna" />
                 </LinearLayout>
             </RadioGroup>
         </LinearLayout>
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="140dp"
+            android:layout_marginTop="20dp"
+            android:background="#CC2196F3"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textSize="28sp"/>
+        <Button
+            android:id="@+id/btnSkip"
+            android:layout_width="130dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="150dp"
+            android:layout_marginTop="20dp"
+            android:background="#CC2196F3"
+            android:text="Skip"
+            android:textColor="@color/white"
+            android:textSize="28sp"/>
+
     </LinearLayout>
+
 </ScrollView>
