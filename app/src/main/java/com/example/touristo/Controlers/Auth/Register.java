@@ -65,7 +65,7 @@ public class Register extends AppCompatActivity {
                             }
                             else{
                                 Toast.makeText(registerActivity , "Verify you email then Login",Toast.LENGTH_SHORT).show();
-                            }
+                            }   
                         } else {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(registerActivity , "Authentification failed or you didn't verify you email!!",

@@ -1,8 +1,10 @@
-package com.example.touristo;
+package com.example.touristo.Views;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+
+import com.example.touristo.R;
 
 public class Map extends AppCompatActivity {
 
