@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.touristo.R;
+
 public class Map extends AppCompatActivity {
     private Button bizerte ,jendouba,sousse,kairouan,kasserine,sbz,gabes,tozeur;
     @Override
@@ -14,6 +16,7 @@ public class Map extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
         init();
+        /*
         bizerte.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -77,7 +80,7 @@ public class Map extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        });
+        });*/
     }
     public void init()
     {

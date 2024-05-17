@@ -31,7 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         super.onStart();
         FirebaseUser currentUser = loginController.getCurrentUser();
         if(currentUser != null && currentUser.isEmailVerified() ){
-            Intent intent = new Intent(getApplicationContext() , MainActivityAladdin.class);
+            Intent intent = new Intent(getApplicationContext() , Form.class);
             startActivity(intent);
             finish();
         }

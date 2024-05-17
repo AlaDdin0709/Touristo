@@ -7,6 +7,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 
+import com.example.touristo.Views.Form;
 import com.example.touristo.Views.MainActivityAladdin;
 import com.example.touristo.Views.LoginActivity;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -38,7 +39,7 @@ public class Login {
                         if (task.isSuccessful()) {
                             if (getCurrentUser().isEmailVerified())
                             {
-                                Intent intent = new Intent( loginActivity.getApplicationContext(), MainActivityAladdin.class );
+                                Intent intent = new Intent( loginActivity.getApplicationContext(), Form.class );
                                 loginActivity.startActivity(intent);
                                 loginActivity.finish();
                             }

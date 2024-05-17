@@ -13,7 +13,7 @@ import com.example.touristo.R;
 
 public class Form extends AppCompatActivity {
 private Button btnSubmit,btnSkip;
-private RadioButton beaches,activities,events,sites;
+private RadioButton beaches,activities,events,sites,shopping,ff,adventures,mounts;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +36,78 @@ private RadioButton beaches,activities,events,sites;
                 finish();
             }
         });
+        mounts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Décocher le premier bouton radio
+                beaches.setChecked(false);
+                // Cocher le deuxième bouton radio
+                mounts.setChecked(true);
+}
+        });
+        beaches.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Décocher le premier bouton radio
+                mounts.setChecked(false);
+                // Cocher le deuxième bouton radio
+                beaches.setChecked(true);
+}
+        });
+        sites.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Décocher le premier bouton radio
+                ff.setChecked(false);
+                // Cocher le deuxième bouton radio
+                sites.setChecked(true);
+            }
+        });
+        ff.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Décocher le premier bouton radio
+                sites.setChecked(false);
+                // Cocher le deuxième bouton radio
+                ff.setChecked(true);
+            }
+        });
+        activities .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Décocher le premier bouton radio
+                adventures.setChecked(false);
+                // Cocher le deuxième bouton radio
+                activities .setChecked(true);
+            }
+        });
+        adventures.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Décocher le premier bouton radio
+                activities .setChecked(false);
+                // Cocher le deuxième bouton radio
+                adventures.setChecked(true);
+            }
+        });
+        events .setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Décocher le premier bouton radio
+                shopping.setChecked(false);
+                // Cocher le deuxième bouton radio
+                events .setChecked(true);
+            }
+        });
+        shopping.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Décocher le premier bouton radio
+                events .setChecked(false);
+                // Cocher le deuxième bouton radio
+                shopping.setChecked(true);
+            }
+        });
     }
     private void init()
     {
@@ -45,6 +117,10 @@ private RadioButton beaches,activities,events,sites;
         activities=findViewById(R.id.activities);
         events=findViewById(R.id.events);
         sites=findViewById(R.id.sites);
+        mounts=findViewById(R.id.mounts);
+        adventures=findViewById(R.id.adventures);
+        ff=findViewById(R.id.ff);
+        shopping=findViewById(R.id.shopping);
     }
     public void suggestDestination() {
         String destination = "";
@@ -54,6 +130,8 @@ private RadioButton beaches,activities,events,sites;
             destination = "Northern Tunisia";
         } else  {
             destination = "Central Tunisia";
+
+
         }
 
         // Question 2: Do you prefer relaxing activities or exciting adventures?
@@ -79,4 +157,5 @@ private RadioButton beaches,activities,events,sites;
         String suggestionMessage = "We suggest you visit " + destination + ".";
         Toast.makeText(getApplicationContext(), suggestionMessage, Toast.LENGTH_LONG).show();
     }
+
 }
