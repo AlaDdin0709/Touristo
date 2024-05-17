@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Arrière-plan de l'activité -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/place1_background_image"
+        android:scaleType="centerCrop"/>
+
+    <!-- Titre de l'endroit en gras -->
+    <TextView
+        android:id="@+id/countryNameTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center_horizontal"
+        android:padding="16dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:text="Sousse"
+        android:textColor="#FFFFFF" />
+
+    <!-- RecyclerView pour afficher les images -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/countryNameTextView"
+        android:padding="16dp"/>
+
+</RelativeLayout>

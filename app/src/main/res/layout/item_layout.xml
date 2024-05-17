@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_margin="4dp"> <!-- Réduire l'espace entre les éléments -->
+
+    <!-- ImageView pour afficher l'image ou la vidéo -->
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="500dp"
+    android:layout_height="300dp"
+    android:adjustViewBounds="true"
+    android:scaleType="centerCrop" />
+
+    <!-- Description de l'élément -->
+
+    <VideoView
+        android:id="@+id/videoView"
+        android:layout_width="500dp"
+        android:layout_height="300dp" />
+
+    <TextView
+        android:id="@+id/descriptionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description de l'élément"
+        android:paddingTop="8dp"
+        android:textSize="16sp" />
+
+</LinearLayout>
