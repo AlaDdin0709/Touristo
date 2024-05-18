@@ -1,6 +1,9 @@
 package com.example.touristo.Activies;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,10 +15,13 @@ import java.util.List;
 import android.graphics.Typeface;
 
 import com.example.touristo.R;
+import com.example.touristo.Views.LoginActivity;
+import com.example.touristo.Views.Map;
+import com.example.touristo.Views.RegisterActivity;
 
 public class Place0Activity extends AppCompatActivity {
     private List<Item> itemList = new ArrayList<>();
-
+    ImageView btnReturn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +29,7 @@ public class Place0Activity extends AppCompatActivity {
 
         // Définir le nom du pays en haut de l'activité
         TextView countryNameTextView = findViewById(R.id.countryNameTextView);
+        btnReturn = findViewById(R.id.btnReturn);
         countryNameTextView.setText("Sidi Bouzid");
         countryNameTextView.setTypeface(null, Typeface.BOLD);
 
@@ -45,5 +52,14 @@ public class Place0Activity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ItemAdapter adapter = new ItemAdapter(itemList);
         recyclerView.setAdapter(adapter);
+
+        btnReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Map.class );
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

@@ -2,22 +2,30 @@ package com.example.touristo.Activies;
 
 import androidx.appcompat.app.AppCompatActivity;
 import java.util.List;
+
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageView;
 
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.touristo.R;
+import com.example.touristo.Views.Map;
 
 import java.util.ArrayList;
 
 // Place1Activity.java
 public class Place1Activity extends AppCompatActivity {
+    ImageView btnReturn;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_place1);
+        btnReturn = findViewById(R.id.btnReturn);
 
         // Remplir itemList avec les données spécifiques à cet endroit
         List<Item> itemList = new ArrayList<>();
@@ -45,5 +53,14 @@ public class Place1Activity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         ItemAdapter adapter = new ItemAdapter(itemList);
         recyclerView.setAdapter(adapter);
+
+        btnReturn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Map.class );
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

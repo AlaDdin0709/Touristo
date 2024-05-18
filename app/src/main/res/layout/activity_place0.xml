@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -23,7 +24,23 @@
         android:text="Sidi Bouzid"
         android:textColor="#FFFFFF" />
 
+
     <!-- RecyclerView pour afficher les images -->
+
+
+    <ImageButton
+        android:id="@+id/btnReturn"
+        android:layout_width="63dp"
+        android:layout_height="73dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="338dp"
+        android:layout_marginTop="14dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/return_button_desc"
+        android:scaleType="centerInside"
+        android:src="@drawable/ic_return" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
