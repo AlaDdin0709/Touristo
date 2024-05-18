@@ -26,6 +26,7 @@
         android:layout_height="wrap_content"
         android:text="Description de l'élément"
         android:paddingTop="8dp"
+        android:textColor="@color/white"
         android:textSize="16sp" />
 
 </LinearLayout>

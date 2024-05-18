@@ -21,7 +21,7 @@ public class Place1Activity extends AppCompatActivity {
 
         // Remplir itemList avec les données spécifiques à cet endroit
         List<Item> itemList = new ArrayList<>();
-        /*itemList.add(new Item(R.drawable.place1_image1, "Château de Sousse, Tunisie", null));
+        itemList.add(new Item(R.drawable.place1_image1, "Château de Sousse, Tunisie", null));
         itemList.add(new Item(R.drawable.place1_image2, "table crépuscule times", null));
         itemList.add(new Item(R.drawable.ss1, "Mall-Of-Sousse-", null));
         itemList.add(new Item(R.drawable.ss2, "Sousse_Ribat_", null));
@@ -34,11 +34,11 @@ public class Place1Activity extends AppCompatActivity {
         itemList.add(new Item(R.drawable.ss9, "medinadesouss-", null));
         itemList.add(new Item(R.drawable.ss10, "plage boujaafer sousse", null));
         itemList.add(new Item(R.drawable.ss11, "ribat de sousse", null));
-        itemList.add(new Item(R.drawable.ss12, "rimusée dar essid de sousse", null));*/
+        itemList.add(new Item(R.drawable.ss12, "rimusée dar essid de sousse", null));
         // Ajouter d'autres images et vidéos si nécessaire
-       /** Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.vedio1);
+        Uri videoUri = Uri.parse("android.resource://" + getPackageName() + "/" + R.raw.vedio1);
         itemList.add(new Item(0, "Visit Sousse, a bustling coastal city in eastern Tunisia, renowned for its stunning beaches and rich history. Explore the UNESCO-listed Medina of Sousse, with its winding alleys and historic sites. Sousse seamlessly blends ancient heritage with modern amenities, making it a popular destination for tourists and locals alike.\n" +
-                "\n",videoUri));**/
+                "\n",videoUri));
 
         // Configurer la RecyclerView avec ItemAdapter
         RecyclerView recyclerView = findViewById(R.id.recyclerView);

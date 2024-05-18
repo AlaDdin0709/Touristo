@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.touristo.Activies.Place0Activity;
+import com.example.touristo.Activies.Place1Activity;
 import com.example.touristo.R;
 
 public class Map extends AppCompatActivity {
@@ -32,15 +34,15 @@ public class Map extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        });
+        });*/
         sousse.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Map.this, MainActivity.class);
+                Intent intent = new Intent(Map.this, Place1Activity.class);
                 startActivity(intent);
                 finish();
             }
-        });
+        });/*
         kairouan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,15 +58,15 @@ public class Map extends AppCompatActivity {
                 startActivity(intent);
                 finish();
             }
-        });
+        });*/
         sbz.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Map.this, MainActivity.class);
+                Intent intent = new Intent(Map.this, Place0Activity.class);
                 startActivity(intent);
                 finish();
             }
-        });
+        });/*
         gabes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

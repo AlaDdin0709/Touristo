@@ -45,6 +45,17 @@
             android:exported="false">
         </activity>
 
+        <activity
+            android:name=".Activies.Place0Activity"
+            android:exported="false">
+        </activity>
+
+        <activity
+            android:name=".Activies.Place1Activity"
+            android:exported="false">
+        </activity>
+
+
 
     </application>
 
